@@ -413,7 +413,7 @@
     <div class="shell hero-grid">
       <div>
         <div class="eyebrow">Developer: SHENG-CHIH YU</div>
-        <h1 data-copy="heroTitle">營建管理工程日報表</h1>
+        <h1 id="heroTitle">營建管理工程日報表</h1>
         <p class="lead" data-copy="hero">隱私權政策與圖片版使用流程。提供繁體中文、英文、越南文三種語言，方便 App 使用者查閱。</p>
       </div>
       <aside class="summary" aria-label="隱私重點">
@@ -684,6 +684,7 @@
 
     function setLanguage(lang) {
       document.documentElement.lang = pageCopy[lang].htmlLang;
+      document.getElementById("heroTitle").textContent = pageCopy[lang].heroTitle;
       document.querySelectorAll(".tab").forEach(tab => {
         tab.setAttribute("aria-selected", String(tab.dataset.lang === lang));
       });
